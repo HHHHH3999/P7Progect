@@ -18,6 +18,7 @@ import com.example.p7project.Beans.BannerBean;
 import com.example.p7project.Beans.SouBean;
 import com.example.p7project.R;
 import com.example.p7project.adapters.BannerAdapter;
+import com.example.p7project.adapters.ColumnAdapter;
 import com.example.p7project.adapters.SingleAdapter;
 
 import java.util.ArrayList;
@@ -75,19 +76,9 @@ public class HomeFragment extends Fragment {
         ColumnLayoutHelper columnLayoutHelper = new ColumnLayoutHelper();
         columnLayoutHelper.setItemCount(5);
         columnLayoutHelper.setPadding(20, 20, 20, 20);
-            new
 
 
-
-
-
-
-
-
-
-
-
-
+        ColumnAdapter columnAdapter = new ColumnAdapter(columnLayoutHelper, getActivity());
 
 
 
@@ -99,7 +90,7 @@ public class HomeFragment extends Fragment {
         DelegateAdapter adapter = new DelegateAdapter(virtualLayoutManager, true);
         adapter.addAdapter(singleAdapter);
         adapter.addAdapter(bannerAdapter);
-
+        adapter.addAdapter(columnAdapter);
         rv.setAdapter(adapter);
 
 

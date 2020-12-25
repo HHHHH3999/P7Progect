@@ -25,12 +25,12 @@ import java.util.ArrayList;
 public class ColumnAdapter extends DelegateAdapter.Adapter {
     private ColumnLayoutHelper columnLayoutHelper;
     private Context context;
-    private ArrayList<ColumnBean.DataBean.ChannelBean> list;
+//    private ArrayList<ColumnBean.DataBean.ChannelBean> list;
 
-    public ColumnAdapter(ColumnLayoutHelper columnLayoutHelper, Context context, ArrayList<ColumnBean.DataBean.ChannelBean> list) {
+
+    public ColumnAdapter(ColumnLayoutHelper columnLayoutHelper, Context context) {
         this.columnLayoutHelper = columnLayoutHelper;
         this.context = context;
-        this.list = list;
     }
 
     @Override
@@ -48,16 +48,6 @@ public class ColumnAdapter extends DelegateAdapter.Adapter {
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-       ViewHolder viewHolder= (ViewHolder) holder;
-
-        viewHolder.banner.setImages(list)
-                .setImageLoader(new ImageLoader() {
-                    @Override
-                    public void displayImage(Context context, Object path, ImageView imageView) {
-                        BannerBean bannerBean= (BannerBean) path;
-                        Glide.with(context).load(bannerBean.getImg()).into(imageView);
-                    }
-                }).start();
 
     }
 
@@ -66,11 +56,19 @@ public class ColumnAdapter extends DelegateAdapter.Adapter {
         return 1;
     }
     public class ViewHolder extends RecyclerView.ViewHolder {
-        public Banner banner;
+        public ImageView iv_gohome;
+        public ImageView iv_can;
+        public ImageView iv_pei;
+        public ImageView iv_close;
+        public ImageView iv_zhiqu;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            this.banner = (Banner) itemView.findViewById(R.id.banner);
+            this.iv_gohome = (ImageView) itemView.findViewById(R.id.iv_gohome);
+            this.iv_can = (ImageView) itemView.findViewById(R.id.iv_can);
+            this.iv_pei = (ImageView) itemView.findViewById(R.id.iv_pei);
+            this.iv_close = (ImageView) itemView.findViewById(R.id.iv_close);
+            this.iv_zhiqu = (ImageView) itemView.findViewById(R.id.iv_zhiqu);
 
         }
     }
