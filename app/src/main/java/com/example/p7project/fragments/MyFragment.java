@@ -1,4 +1,4 @@
-package com.example.p7project.Fragments;
+package com.example.p7project.fragments;
 
 import android.os.Bundle;
 
@@ -11,13 +11,12 @@ import android.view.ViewGroup;
 import com.example.p7project.R;
 
 
-public class ZhuanTiFragment extends Fragment {
-
+public class MyFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_zhuanti, container, false);
+        return inflater.inflate(R.layout.fragment_my, container, false);
     }
 }

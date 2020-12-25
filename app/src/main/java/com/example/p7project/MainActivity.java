@@ -9,11 +9,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
-import com.example.p7project.Fragments.FenLeiFragment;
-import com.example.p7project.Fragments.GouWuFragment;
-import com.example.p7project.Fragments.HomeFragment;
-import com.example.p7project.Fragments.MyFragment;
-import com.example.p7project.Fragments.ZhuanTiFragment;
+import com.example.p7project.fragments.FenLeiFragment;
+import com.example.p7project.fragments.GouWuFragment;
+import com.example.p7project.fragments.HomeFragment;
+import com.example.p7project.fragments.MyFragment;
+import com.example.p7project.fragments.ZhuanTiFragment;
 
 import java.util.ArrayList;
 
@@ -67,6 +67,10 @@ public class MainActivity extends AppCompatActivity {
                 .add(R.id.tab_content, fenLeiFragment)
                 .add(R.id.tab_content, gouWuFragment)
                 .add(R.id.tab_content, myFragment)
+                .hide(fenLeiFragment)
+                .hide(gouWuFragment)
+                .hide(myFragment)
+                .hide(zhuanTiFragment)
                 .show(homeFragment).commit();
 
         rg.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
