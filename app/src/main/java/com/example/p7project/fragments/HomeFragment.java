@@ -94,7 +94,7 @@ public class HomeFragment extends Fragment {
 
         GridLayoutHelper gridLayoutHelper = new GridLayoutHelper(2);
         ArrayList<GridBean> gridBeans = new ArrayList<>();
-       
+
 
 
         //总的行数用完放进这里
