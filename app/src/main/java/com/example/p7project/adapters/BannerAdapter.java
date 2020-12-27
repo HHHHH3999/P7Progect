@@ -5,7 +5,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -14,8 +13,7 @@ import com.alibaba.android.vlayout.DelegateAdapter;
 import com.alibaba.android.vlayout.LayoutHelper;
 import com.alibaba.android.vlayout.layout.SingleLayoutHelper;
 import com.bumptech.glide.Glide;
-import com.example.p7project.Beans.BannerBean;
-import com.example.p7project.Beans.SouBean;
+import com.example.p7project.Beans.ColumnBean;
 import com.example.p7project.R;
 import com.youth.banner.Banner;
 import com.youth.banner.loader.ImageLoader;
@@ -25,9 +23,9 @@ import java.util.ArrayList;
 public class BannerAdapter extends DelegateAdapter.Adapter {
     private SingleLayoutHelper singleLayoutHelper;
     private Context context;
-    private ArrayList<BannerBean> list;
+    private ArrayList<ColumnBean.DataBean.BannerBean> list;
 
-    public BannerAdapter(SingleLayoutHelper singleLayoutHelper, Context context, ArrayList<BannerBean> list) {
+    public BannerAdapter(SingleLayoutHelper singleLayoutHelper, Context context, ArrayList<ColumnBean.DataBean.BannerBean> list) {
         this.singleLayoutHelper = singleLayoutHelper;
         this.context = context;
         this.list = list;
@@ -54,8 +52,8 @@ public class BannerAdapter extends DelegateAdapter.Adapter {
                 .setImageLoader(new ImageLoader() {
                     @Override
                     public void displayImage(Context context, Object path, ImageView imageView) {
-                        BannerBean bannerBean= (BannerBean) path;
-                        Glide.with(context).load(bannerBean.getImg()).into(imageView);
+                        ColumnBean.DataBean.BannerBean bannerBean= (ColumnBean.DataBean.BannerBean) path;
+                        Glide.with(context).load(bannerBean.getImage_url()).into(imageView);
                     }
                 }).start();
 

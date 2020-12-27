@@ -7,6 +7,7 @@ import com.google.gson.Gson;
 import java.io.IOException;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
+import java.time.Year;
 
 import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
@@ -23,9 +24,10 @@ public class RetrofitUtils implements INewWorkInterface {
     private ApiService apiService;
 
     public RetrofitUtils() {
+
+
         Retrofit retrofit = new Retrofit.Builder()
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-
                 .baseUrl(URLConstant.BASEURL)
                 .build();
         apiService = retrofit.create(ApiService.class);

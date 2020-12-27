@@ -2,10 +2,7 @@ package com.example.p7project.contract;
 
 
 import com.example.p7project.Base.BaseModle;
-import com.example.p7project.Base.BasePresenter;
 import com.example.p7project.Base.BaseView;
-import com.example.p7project.Beans.BannerBean;
-import com.example.p7project.Beans.ColumnBean;
 import com.example.p7project.utils.INetCallBack;
 
 public interface IContract {

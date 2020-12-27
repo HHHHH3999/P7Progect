@@ -12,7 +12,7 @@ public class PersenterImpl extends BasePresenter<IContract.IView, IContract.IMod
 
 
     public void getColumnbean() {
-        imodel.getData(URLConstant.BANNER, new INetCallBack<ColumnBean>() {
+        imodel.getData(URLConstant.NEWLIST, new INetCallBack<ColumnBean>() {
             @Override
             public void onSuccess(ColumnBean columnBean) {
                 ivew.getData(columnBean);

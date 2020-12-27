@@ -12,15 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.alibaba.android.vlayout.DelegateAdapter;
 import com.alibaba.android.vlayout.LayoutHelper;
 import com.alibaba.android.vlayout.layout.ColumnLayoutHelper;
-import com.alibaba.android.vlayout.layout.SingleLayoutHelper;
-import com.bumptech.glide.Glide;
-import com.example.p7project.Beans.BannerBean;
-import com.example.p7project.Beans.ColumnBean;
 import com.example.p7project.R;
-import com.youth.banner.Banner;
-import com.youth.banner.loader.ImageLoader;
-
-import java.util.ArrayList;
 
 public class ColumnAdapter extends DelegateAdapter.Adapter {
     private ColumnLayoutHelper columnLayoutHelper;

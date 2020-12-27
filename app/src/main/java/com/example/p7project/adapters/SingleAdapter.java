@@ -15,7 +15,6 @@ import com.alibaba.android.vlayout.LayoutHelper;
 import com.alibaba.android.vlayout.layout.SingleLayoutHelper;
 import com.bumptech.glide.Glide;
 import com.example.p7project.Beans.ColumnBean;
-import com.example.p7project.Beans.SouBean;
 import com.example.p7project.R;
 
 import java.util.ArrayList;
