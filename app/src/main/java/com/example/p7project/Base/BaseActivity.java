@@ -5,12 +5,20 @@ import android.os.Bundle;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-public abstract class BaseActivity<P extends BasePresenter> extends AppCompatActivity implements BaseView {
-    public P persenter;
+import butterknife.ButterKnife;
+import butterknife.Unbinder;
 
+public abstract class BaseActivity<P extends BasePresenter> extends AppCompatActivity implements BaseView {
+    protected P persenter;
+    Unbinder unbinder;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
+
+        unbinder = ButterKnife.bind(this);
+
         if (persenter == null) {
             persenter = getPersenter();
             persenter.attachView(this);
@@ -25,6 +33,7 @@ public abstract class BaseActivity<P extends BasePresenter> extends AppCompatAct
         super.onDestroy();
         if (persenter != null) {
             persenter = null;
+            unbinder.unbind();
         }
     }
 }

@@ -14,6 +14,7 @@ import com.alibaba.android.vlayout.DelegateAdapter;
 import com.alibaba.android.vlayout.LayoutHelper;
 import com.alibaba.android.vlayout.layout.SingleLayoutHelper;
 import com.bumptech.glide.Glide;
+import com.example.p7project.Beans.ColumnBean;
 import com.example.p7project.Beans.SouBean;
 import com.example.p7project.R;
 
@@ -22,14 +23,14 @@ import java.util.ArrayList;
 public class SingleAdapter extends DelegateAdapter.Adapter {
 private SingleLayoutHelper singleLayoutHelper;
 private Context context;
-private ArrayList<SouBean> list;
+private ArrayList<ColumnBean.DataBean.BannerBean> list;
 private onClick onClick;
 
     public void setOnClick(SingleAdapter.onClick onClick) {
         this.onClick = onClick;
     }
 
-    public SingleAdapter(SingleLayoutHelper singleLayoutHelper, Context context, ArrayList<SouBean> list) {
+    public SingleAdapter(SingleLayoutHelper singleLayoutHelper, Context context, ArrayList<ColumnBean.DataBean.BannerBean> list) {
         this.singleLayoutHelper = singleLayoutHelper;
         this.context = context;
         this.list = list;
@@ -50,9 +51,9 @@ private onClick onClick;
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
                 ViewHolder viewHolder= (ViewHolder) holder;
-        SouBean souBean = list.get(position);
-        Glide.with(context).load(souBean.getImg()).into(viewHolder.iv_sou);
-        viewHolder.tv_sou.setText(souBean.getName());
+        ColumnBean.DataBean.BannerBean bannerBean = list.get(position);
+        Glide.with(context).load(bannerBean.getImage_url()).into(viewHolder.iv_sou);
+        viewHolder.tv_sou.setText(bannerBean.getName());
         viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
